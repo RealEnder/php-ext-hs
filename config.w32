@@ -1,0 +1,7 @@
+ARG_ENABLE("hs", "enable heatshrink support", "no");
+
+if (PHP_LZ4 != "no") {
+   EXTENSION("hs", "hs.c", PHP_HS_SHARED, "");
+   ADD_SOURCES(configure_module_dirname + "/heatshrink", "hs.c heatshrink/heatshrink_encoder.c heatshrink/heatshrink_decoder.c", "heatshrink");
+   PHP_INSTALL_HEADERS("ext/hs/", "php_hs.h");
+}
