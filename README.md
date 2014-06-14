@@ -49,7 +49,7 @@ heatshrink compression. You must use same window and lookahead values for compre
 Returns the compressed data or FALSE if an error occurred.
 
 
-### hs\_uncompress — heatshrink decompression ###
+### hs\_decompress — heatshrink decompression ###
 
 #### Description ####
 
@@ -77,9 +77,9 @@ Returns the decompressed data or FALSE if an error occurred.
 
 ## Examples ##
 
-    $data = hs_compress('test');
+    $compressed_data = hs_compress('test');
 
-    hs_decompress($data);
+    $data = hs_decompress($compressed_data);
 
 ## Authors ##
 
