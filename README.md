@@ -83,7 +83,7 @@ Returns the decompressed data or FALSE if an error occurred.
 
 ## Authors ##
 
-Alex Stanev, Plamen Baruh, 2004
+Alex Stanev <alex@stanev.org>, Plamen Baruh <plamen_baruch@yahoo.com>, 2014
 
 heatshrink by Scott Vokes
 
