@@ -168,7 +168,11 @@ static ZEND_FUNCTION(hs_compress)
                     RETURN_FALSE;
                 }
                 if (fres == HSER_FINISH_DONE) {
+#if PHP_MAJOR_VERSION == 7
+                    RETVAL_STRINGL((char *) outbuff, poll_sz);
+#else
                     RETVAL_STRINGL((char *) outbuff, poll_sz, 1);
+#endif
                     efree(outbuff);
                     heatshrink_encoder_free(hse);
                     return;
@@ -259,7 +263,11 @@ static ZEND_FUNCTION(hs_decompress)
                     RETURN_FALSE;
                 }
                 if (fres == HSDR_FINISH_DONE) {
+#if PHP_MAJOR_VERSION == 7
+                    RETVAL_STRINGL((char *) outbuff, poll_sz);
+#else
                     RETVAL_STRINGL((char *) outbuff, poll_sz, 1);
+#endif
                     efree(outbuff);
                     heatshrink_decoder_free(hsd);
                     return;
